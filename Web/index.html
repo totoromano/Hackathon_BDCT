@@ -60,33 +60,52 @@
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(1) }">
 							<!-- <h1 class="text-center">Money Saved Each Month</h1> -->
 							<div ng-controller="MoneyController">
-								<div ng-model="periodSelector" value="1" class="form-control period-type list-inline">
-									<label for="day">Day</label><input type="radio" name="period" id="name" value="0"> |
-									<label for="month">Month</label><input type="radio" name="period" id="month" value="1">|
-									<label for="year">Year</label><input type="radio" name="period" id="year" value="2">
+								<div class="form-control period-type list-inline">
+									<label for="day">Day</label><input type="radio" name="period" id="name" value="0" ng-model="periodSelector"> |
+									<label for="month">Month</label><input type="radio" name="period" id="month" value="1"ng-model="periodSelector">|
+									<label for="year">Year</label><input type="radio" name="period" id="year" value="2"ng-model="periodSelector">
 								</div>
 								<select ng-model="selector" value="1" class="form-control graph-type">
 									<option value="1">Line</option>
 									<option value="2">Bar</option> 
 								</select>
-								<canvas class="chart chart-line" data="dayData" labels="dayLabels" series="series" ng-show="periodSelector == 1 && selector == 1"></canvas>
-								<canvas class="chart chart-bar" data="dayData" labels="dayLabels" series="series" ng-show="periodSelector == 1 && selector == 2"></canvas>
+								<!-- <canvas class="chart chart-line" data="dayData" labels="dayLabels" series="daySeries" ng-show="periodSelector == 0 && selector == 1"></canvas>
+								<canvas class="chart chart-bar" data="dayData" labels="dayLabels" series="daySeries" ng-show="periodSelector == 0 && selector == 2"></canvas>
 								
-								<canvas class="chart chart-line" data="monthData" labels="monthLabels" series="series" ng-show="periodSelector == 2 && selector == 1"></canvas>
-								<canvas class="chart chart-bar" data="monthData" labels="monthLabels" series="series" ng-show="periodSelector == 2 && selector == 2"></canvas>
+								<canvas class="chart chart-line" data="monthData" labels="monthLabels" series="monthSeries" ng-show="periodSelector == 1 && selector == 1"></canvas>
+								<canvas class="chart chart-bar" data="monthData" labels="monthLabels" series="monthSeries" ng-show="periodSelector == 1 && selector == 2"></canvas>
 
-								<canvas class="chart chart-line" data="yearData" labels="yearLabels" series="series" ng-show="periodSelector == 3 && selector == 1"></canvas>
-								<canvas class="chart chart-bar" data="yearData" labels="yearLabels" series="series" ng-show="periodSelector == 3 && selector == 2"></canvas>
+								<canvas class="chart chart-line" data="yearData" labels="yearLabels" series="yearSeries" ng-show="periodSelector == 2 && selector == 1"></canvas>
+								<canvas class="chart chart-bar" data="yearData" labels="yearLabels" series="yearSeries" ng-show="periodSelector == 2 && selector == 2"></canvas> -->
+								<canvas class="chart chart-line" data="dayData"
+								  labels="dayLabels" legend="false" series="daySeries">
+								</canvas> 
 							</div>
 						</div>
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(2) }">
-							<h1 class="text-center ready_load">Heart</h1>
+							<div ng-controller="HeartController">
+								<canvas class="chart chart-line" data="stepData"
+								  labels="stepLabels" legend="false" series="stepSeries">
+								</canvas> 
+							</div>
 						</div>
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(3) }">
-							<h1 class="text-center ready_load">Tree</h1>
+							<div ng-controller="TreeController">
+								<canvas class="chart chart-line" data="treeData"
+								  labels="treeLabels" legend="false" series="treeSeries">
+								</canvas> 
+							</div>
 						</div>
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(4) }">
-							<h1 class="text-center ready_load">History</h1>
+						   <div ng-controller="HistoryController">
+						   	    <div style="max-height: 500px; overflow-y: scroll;">
+							   		<div class="trip-record text-center" ng-repeat="record in records">
+							   			<h2 class="pull-left">{{record.trip}}</h2>
+							   			<h2 class="pull-right" style="padding-right: 20px;">{{record.steps}}</h2>
+							   			<div class="clear"></div>
+							   		</div>
+						   		</div>
+						   </div>
 						</div>
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(5) }">
 							<h1 class="text-center ready_load">Rewards</h1>
