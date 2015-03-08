@@ -152,13 +152,13 @@
 		  $scope.periodSelector = 1;
 	});
 
-	app.controller('WalkController', function($http) {
-	    var walk = this;
-	    walk.products = [];
+	// app.controller('WalkController', function($http) {
+	//     var walk = this;
+	//     walk.products = [];
 
-	    var config = {'url': apiurl, 'method': 'GET', 'headers': {'X-Parse-Application-Id': 'AQxY526I5fcCPVkniY6ONnaBqU5qh1qDMqcOCORz', 'X-Parse-REST-API-Key': 'u2WHb3eAIWcUylGDpdN1Koif5wtsGXOFBEMQrIfW'}}
-		$http(config).success(function(data) {
-			walk.products = data.results;
-		});
-	});
+	//     var config = {'url': apiurl, 'method': 'GET', 'headers': {'X-Parse-Application-Id': 'AQxY526I5fcCPVkniY6ONnaBqU5qh1qDMqcOCORz', 'X-Parse-REST-API-Key': 'u2WHb3eAIWcUylGDpdN1Koif5wtsGXOFBEMQrIfW'}}
+	// 	$http(config).success(function(data) {
+	// 		walk.products = data.results;
+	// 	});
+	// });
 })();
