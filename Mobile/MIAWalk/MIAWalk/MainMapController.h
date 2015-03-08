@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface MainMapController : UIViewController <MKMapViewDelegate>
+@interface MainMapController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property(nonatomic, retain) CLLocationManager *locationManager;
 
 @end

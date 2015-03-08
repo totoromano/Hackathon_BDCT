@@ -17,6 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //[GMSServices provideAPIKey:@"AIzaSyDJsFmA_Jd1Dk7tX9530waSLX7E5KMRJfE"];
+    [Parse setApplicationId:@"AQxY526I5fcCPVkniY6ONnaBqU5qh1qDMqcOCORz"
+                  clientKey:@"r2MfKNu2Q53qUIRpC60aBEmk5ZJBxotjq79FREBv"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     return YES;
 }
 

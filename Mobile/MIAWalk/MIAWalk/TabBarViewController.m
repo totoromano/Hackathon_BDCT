@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setSelectedIndex:1];
+    [self.tabBar setTintColor:[UIColor colorWithRed:41.0/255.0 green:171.0/255.0 blue:226/255.0 alpha:1]];
+    [self.tabBar setBarTintColor:[UIColor blackColor]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
