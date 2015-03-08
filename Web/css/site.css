@@ -1,0 +1,15 @@
+.dashboard-selector {
+	text-align: center;
+
+}
+
+.dashboard-selector i {
+	font-size: 3em;
+}
+
+.logo {
+	  padding: 10px;
+  margin: 10px;
+	/*width: 100%;*/
+	height: 92px;
+}
