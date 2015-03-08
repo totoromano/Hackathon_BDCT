@@ -9,16 +9,24 @@
 	</head>
 	<body ng-controller="WalkController as walk">
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row header-row">
 				<div class="col-md-9">
 					<img src="images/wc.png" alt="Walking City" class="logo" />
 				</div>
-				<div class="col-md-3">
-
+				<div class="col-md-3 right">
+					<div class="user-wrapper">
+						<div>
+							<ul class="list-inline">
+								<li>Hi Brian!</li>
+								<li>Log Out</li>
+							</ul>
+						</div>
+					</div>
+					
 				</div>
 			</div>
-			<div class="row" ng-controller="DashboardSelectorController as dashboard">
-				<div class="col-md-3">
+			<div class="row content-row" ng-controller="DashboardSelectorController as dashboard">
+				<div class="col-md-2 left-panel">
 					<ul class="nav nav-pills nav-stacked">
 						<li ng-class="{ active:dashboard.isSelected(1) }">
 							<a href="#" class="dashboard-selector" ng-click="dashboard.selectTab(1)">
@@ -42,35 +50,46 @@
 						</li>
 						<li ng-class="{ active:dashboard.isSelected(5) }">
 							<a href="#" class="dashboard-selector" ng-click="dashboard.selectTab(5)">
-								<i class="glyphicon glyphicon-star"></i>
+								<i class="glyphicon glyphicon-gift"></i>
 							</a>
 						</li>
 					</ul>
 				</div>
-				<div class="col-md-9">
+				<div class="col-md-10 right-panel">
 					<div class="tab-content">
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(1) }">
-							<h1 class="text-center">Money Saved Each Month</h1>
+							<!-- <h1 class="text-center">Money Saved Each Month</h1> -->
 							<div ng-controller="MoneyController">
-								<select ng-model="selector" value="1">
+								<div ng-model="periodSelector" value="1" class="form-control period-type list-inline">
+									<label for="day">Day</label><input type="radio" name="period" id="name" value="0"> |
+									<label for="month">Month</label><input type="radio" name="period" id="month" value="1">|
+									<label for="year">Year</label><input type="radio" name="period" id="year" value="2">
+								</div>
+								<select ng-model="selector" value="1" class="form-control graph-type">
 									<option value="1">Line</option>
 									<option value="2">Bar</option> 
 								</select>
-								<canvas class="chart chart-line" data="data" labels="labels" series="series" ng-show="selector == 1"></canvas>
-								<canvas class="chart chart-bar" data="data" labels="labels" series="series" ng-show="selector == 2"></canvas>
+								<canvas class="chart chart-line" data="dayData" labels="dayLabels" series="series" ng-show="periodSelector == 1 && selector == 1"></canvas>
+								<canvas class="chart chart-bar" data="dayData" labels="dayLabels" series="series" ng-show="periodSelector == 1 && selector == 2"></canvas>
+								
+								<canvas class="chart chart-line" data="monthData" labels="monthLabels" series="series" ng-show="periodSelector == 2 && selector == 1"></canvas>
+								<canvas class="chart chart-bar" data="monthData" labels="monthLabels" series="series" ng-show="periodSelector == 2 && selector == 2"></canvas>
+
+								<canvas class="chart chart-line" data="yearData" labels="yearLabels" series="series" ng-show="periodSelector == 3 && selector == 1"></canvas>
+								<canvas class="chart chart-bar" data="yearData" labels="yearLabels" series="series" ng-show="periodSelector == 3 && selector == 2"></canvas>
 							</div>
 						</div>
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(2) }">
-							<h1 class="text-center">Heart</h1>
+							<h1 class="text-center ready_load">Heart</h1>
 						</div>
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(3) }">
-							<h1 class="text-center">Tree</h1>
+							<h1 class="text-center ready_load">Tree</h1>
 						</div>
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(4) }">
-							<h1 class="text-center">History</h1>
+							<h1 class="text-center ready_load">History</h1>
 						</div>
 						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(5) }">
-							<h1 class="text-center">Rewards</h1>
+							<h1 class="text-center ready_load">Rewards</h1>
 						</div>
 					</div>
 				</div>

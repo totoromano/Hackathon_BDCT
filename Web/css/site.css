@@ -1,6 +1,37 @@
+body{
+	background-color: black !important;
+}
+
+.content-row{
+	/*background-color:white;*/
+	padding-top:15px;
+}
+input{
+	display: none;
+}
+.graph-type{
+	  position: absolute;
+	  top: 10px;
+	  max-width: 100px;
+	  right: 10px;
+}
+.period-type{
+	position: absolute;
+	  top: 10px;
+	  max-width: 200px;
+	  right: 200px;
+}
+
+.chart-container > canvas{
+	max-height:500px;
+}
+
+.ready_load{
+	display:none;
+}
+
 .dashboard-selector {
 	text-align: center;
-
 }
 
 .dashboard-selector i {
@@ -12,4 +43,21 @@
   margin: 10px;
 	/*width: 100%;*/
 	height: 92px;
+}
+
+.list-inline li {
+	color: white;
+}
+.right{
+	text-align: right;
+}
+
+
+.user-wrapper{
+	  padding-top: 10px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+	/*color: #29ABE2; */
+	background-color: #8CC663;
 }
