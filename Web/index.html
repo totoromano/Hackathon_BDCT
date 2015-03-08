@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="miawalk">
+	<head>
+		<title>MiaWalk Dashboard</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/angular-chart.css" />
+		<link rel="stylesheet" type="text/css" href="css/site.css"/>
+
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row header-row">
+				<div class="col-md-9">
+					<img src="images/wc.png" alt="Walking City" class="logo" />
+				</div>
+				<div class="col-md-3 right">
+					<div class="user-wrapper">
+						<div>
+							<ul class="list-inline">
+								<li>Hi Brian!</li>
+								<li>Log Out</li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row content-row" ng-controller="DashboardSelectorController as dashboard">
+				<div class="col-md-2 left-panel">
+					<ul class="nav nav-pills nav-stacked">
+						<li ng-class="{ active:dashboard.isSelected(1) }">
+							<a href="#" class="dashboard-selector" ng-click="dashboard.selectTab(1)">
+								<i class="glyphicon glyphicon-usd"></i>
+							</a>
+						</li>
+						<li ng-class="{ active:dashboard.isSelected(2) }">
+							<a href="#" class="dashboard-selector" ng-click="dashboard.selectTab(2)">
+								<i class="glyphicon glyphicon-heart"></i>
+							</a>
+						</li>
+						<li ng-class="{ active:dashboard.isSelected(3) }">
+							<a href="#" class="dashboard-selector" ng-click="dashboard.selectTab(3)">
+								<i class="glyphicon glyphicon-tree-deciduous"></i>
+							</a>
+						</li>
+						<li ng-class="{ active:dashboard.isSelected(4) }">
+							<a href="#" class="dashboard-selector" ng-click="dashboard.selectTab(4)">
+								<i class="glyphicon glyphicon-time"></i>
+							</a>
+						</li>
+						<li ng-class="{ active:dashboard.isSelected(5) }">
+							<a href="#" class="dashboard-selector" ng-click="dashboard.selectTab(5)">
+								<i class="glyphicon glyphicon-gift"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-10 right-panel">
+					<div class="tab-content">
+						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(1) }">
+							<!-- <h1 class="text-center">Money Saved Each Month</h1> -->
+							<div ng-controller="MoneyController">
+								<div ng-model="periodSelector" value="1" class="form-control period-type list-inline">
+									<label for="day">Day</label><input type="radio" name="period" id="name" value="0"> |
+									<label for="month">Month</label><input type="radio" name="period" id="month" value="1">|
+									<label for="year">Year</label><input type="radio" name="period" id="year" value="2">
+								</div>
+								<select ng-model="selector" value="1" class="form-control graph-type">
+									<option value="1">Line</option>
+									<option value="2">Bar</option> 
+								</select>
+								<canvas class="chart chart-line" data="dayData" labels="dayLabels" series="series" ng-show="periodSelector == 1 && selector == 1"></canvas>
+								<canvas class="chart chart-bar" data="dayData" labels="dayLabels" series="series" ng-show="periodSelector == 1 && selector == 2"></canvas>
+								
+								<canvas class="chart chart-line" data="monthData" labels="monthLabels" series="series" ng-show="periodSelector == 2 && selector == 1"></canvas>
+								<canvas class="chart chart-bar" data="monthData" labels="monthLabels" series="series" ng-show="periodSelector == 2 && selector == 2"></canvas>
+
+								<canvas class="chart chart-line" data="yearData" labels="yearLabels" series="series" ng-show="periodSelector == 3 && selector == 1"></canvas>
+								<canvas class="chart chart-bar" data="yearData" labels="yearLabels" series="series" ng-show="periodSelector == 3 && selector == 2"></canvas>
+							</div>
+						</div>
+						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(2) }">
+							<h1 class="text-center ready_load">Heart</h1>
+						</div>
+						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(3) }">
+							<h1 class="text-center ready_load">Tree</h1>
+						</div>
+						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(4) }">
+							<h1 class="text-center ready_load">History</h1>
+						</div>
+						<div ng-class="{ 'tab-pane':true, active:dashboard.isSelected(5) }">
+							<h1 class="text-center ready_load">Rewards</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- 		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="product in walk.products">
+				<h1>{{product.foo}}</h1>
+			</li>
+		</ul> -->
+		<script src="//www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/chart.min.js"></script>
+		<script src="js/angular-chart.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>
