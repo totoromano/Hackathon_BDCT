@@ -9,5 +9,5 @@ WalkingCity is the first reward-based walking community based off  Miami, FL. Yo
 ##David Levy - davidlevy8@gmail.com
 
 #Project Resources
-https://sites.google.com/a/datafest.net/globalurbandatafest/projects/miawalk
-https://www.youtube.com/watch?v=84qnnKZhL04
+##https://sites.google.com/a/datafest.net/globalurbandatafest/projects/miawalk
+##https://www.youtube.com/watch?v=84qnnKZhL04
