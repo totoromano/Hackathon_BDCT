@@ -5,6 +5,7 @@ function calculateSteps(){
 	var count = 0;
 	var Trips = Parse.Object.extend("Trip");
 	var query = new Parse.Query(Trips);
+	 query.greaterThan("StepsCompleted", 0);
 	query.find({
 	  success: function(results) {
 	    for (var i = 0; i < results.length; i++) { 
