@@ -11,5 +11,6 @@
 @interface CouponTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *redeem;
 @property int indexOnArray;
--(void)setCouponUp:(NSString *)str withSubTitle:(NSString *)est withValue:(NSString *)value;
+@property int identifier;
+-(void)setCouponUp:(NSString *)str withSubTitle:(NSString *)est withValue:(NSString *)value withIndex:(NSInteger *)identifier;
 @end

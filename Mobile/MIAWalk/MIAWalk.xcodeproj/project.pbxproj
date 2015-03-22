@@ -47,6 +47,11 @@
 		87B69E861AACBEF20005F4E3 /* sidewalk1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87B69E851AACBEF20005F4E3 /* sidewalk1.jpg */; };
 		87B69E881AACBF5A0005F4E3 /* camera_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 87B69E871AACBF5A0005F4E3 /* camera_large.png */; };
 		87B69E8A1AACBFEE0005F4E3 /* 700-00527947er.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87B69E891AACBFEE0005F4E3 /* 700-00527947er.jpg */; };
+		87BD32951AB5ECB5006D557A /* CouponRedeemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BD32941AB5ECB5006D557A /* CouponRedeemViewController.m */; };
+		87BD32981AB6103B006D557A /* ReportsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BD32971AB6103B006D557A /* ReportsTableViewCell.m */; };
+		87BD329A1AB61502006D557A /* rewardgreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 87BD32991AB61502006D557A /* rewardgreen.png */; };
+		87BD329D1AB616EE006D557A /* ReportDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BD329C1AB616EE006D557A /* ReportDetailsViewController.m */; };
+		87BD329F1AB6217D006D557A /* qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 87BD329E1AB6217D006D557A /* qrcode.png */; };
 		87D523171AAAC86C00A7FA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D523161AAAC86C00A7FA97 /* main.m */; };
 		87D5231A1AAAC86C00A7FA97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D523191AAAC86C00A7FA97 /* AppDelegate.m */; };
 		87D523201AAAC86C00A7FA97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D5231E1AAAC86C00A7FA97 /* Main.storyboard */; };
@@ -60,7 +65,7 @@
 		87D523471AAB348100A7FA97 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D523461AAB348100A7FA97 /* GoogleMaps.framework */; };
 		87D523491AAB34A400A7FA97 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 87D523481AAB34A400A7FA97 /* GoogleMaps.bundle */; };
 		87D523551AAB351000A7FA97 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D5234A1AAB351000A7FA97 /* AVFoundation.framework */; };
-		87D523561AAB351000A7FA97 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D5234B1AAB351000A7FA97 /* CoreData.framework */; };
+		87D523561AAB351000A7FA97 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D5234B1AAB351000A7FA97 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		87D523571AAB351000A7FA97 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D5234C1AAB351000A7FA97 /* CoreLocation.framework */; };
 		87D523581AAB351000A7FA97 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D5234D1AAB351000A7FA97 /* CoreText.framework */; };
 		87D523591AAB351000A7FA97 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D5234E1AAB351000A7FA97 /* GLKit.framework */; };
@@ -129,6 +134,15 @@
 		87B69E851AACBEF20005F4E3 /* sidewalk1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sidewalk1.jpg; sourceTree = "<group>"; };
 		87B69E871AACBF5A0005F4E3 /* camera_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_large.png; sourceTree = "<group>"; };
 		87B69E891AACBFEE0005F4E3 /* 700-00527947er.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "700-00527947er.jpg"; sourceTree = "<group>"; };
+		87B69E8D1AB0E78B0005F4E3 /* MIAWalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MIAWalk.entitlements; sourceTree = "<group>"; };
+		87BD32931AB5ECB5006D557A /* CouponRedeemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponRedeemViewController.h; sourceTree = "<group>"; };
+		87BD32941AB5ECB5006D557A /* CouponRedeemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponRedeemViewController.m; sourceTree = "<group>"; };
+		87BD32961AB6103B006D557A /* ReportsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsTableViewCell.h; sourceTree = "<group>"; };
+		87BD32971AB6103B006D557A /* ReportsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsTableViewCell.m; sourceTree = "<group>"; };
+		87BD32991AB61502006D557A /* rewardgreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewardgreen.png; sourceTree = "<group>"; };
+		87BD329B1AB616EE006D557A /* ReportDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportDetailsViewController.h; sourceTree = "<group>"; };
+		87BD329C1AB616EE006D557A /* ReportDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportDetailsViewController.m; sourceTree = "<group>"; };
+		87BD329E1AB6217D006D557A /* qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrcode.png; sourceTree = "<group>"; };
 		87D523111AAAC86C00A7FA97 /* MIAWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIAWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D523151AAAC86C00A7FA97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87D523161AAAC86C00A7FA97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -239,6 +253,8 @@
 				87B69E571AAC1C470005F4E3 /* start.png */,
 				87B69E6D1AAC293D0005F4E3 /* mainmenu2.png */,
 				87B69E7F1AACBB620005F4E3 /* profile guy.png */,
+				87BD32991AB61502006D557A /* rewardgreen.png */,
+				87BD329E1AB6217D006D557A /* qrcode.png */,
 				87B69E6F1AAC2C790005F4E3 /* WC final2.png */,
 				87B69E711AAC2F0B0005F4E3 /* icon01-facetoface.png */,
 				87B69E4F1AABBF7C0005F4E3 /* libsqlite3.dylib */,
@@ -285,6 +301,7 @@
 		87D523131AAAC86C00A7FA97 /* MIAWalk */ = {
 			isa = PBXGroup;
 			children = (
+				87B69E8D1AB0E78B0005F4E3 /* MIAWalk.entitlements */,
 				87D5233A1AAAC8CF00A7FA97 /* Controllers */,
 				87D523181AAAC86C00A7FA97 /* AppDelegate.h */,
 				87D523191AAAC86C00A7FA97 /* AppDelegate.m */,
@@ -339,6 +356,12 @@
 				87B69E551AAC08C80005F4E3 /* PointAnnotation.m */,
 				87B69E7C1AAC996F0005F4E3 /* CouponTableViewCell.h */,
 				87B69E7D1AAC996F0005F4E3 /* CouponTableViewCell.m */,
+				87BD32931AB5ECB5006D557A /* CouponRedeemViewController.h */,
+				87BD32941AB5ECB5006D557A /* CouponRedeemViewController.m */,
+				87BD32961AB6103B006D557A /* ReportsTableViewCell.h */,
+				87BD32971AB6103B006D557A /* ReportsTableViewCell.m */,
+				87BD329B1AB616EE006D557A /* ReportDetailsViewController.h */,
+				87BD329C1AB616EE006D557A /* ReportDetailsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -393,6 +416,14 @@
 					87D523101AAAC86C00A7FA97 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 528WFQZ9NN;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 					87D523291AAAC86C00A7FA97 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -440,10 +471,12 @@
 				87D523221AAAC86C00A7FA97 /* Images.xcassets in Resources */,
 				87B69E621AAC22E10005F4E3 /* menu.png in Resources */,
 				87B69E771AAC928C0005F4E3 /* heart.png in Resources */,
+				87BD329A1AB61502006D557A /* rewardgreen.png in Resources */,
 				87D523491AAB34A400A7FA97 /* GoogleMaps.bundle in Resources */,
 				87B69E5E1AAC206D0005F4E3 /* start4.png in Resources */,
 				87B69E881AACBF5A0005F4E3 /* camera_large.png in Resources */,
 				87B69E6E1AAC293D0005F4E3 /* mainmenu2.png in Resources */,
+				87BD329F1AB6217D006D557A /* qrcode.png in Resources */,
 				87B69E641AAC23620005F4E3 /* mainmenu.png in Resources */,
 				87B69E781AAC928C0005F4E3 /* tree.png in Resources */,
 				87B69E601AAC219A0005F4E3 /* wcfinal.png in Resources */,
@@ -471,7 +504,10 @@
 				8762A1241AAB520D00C1CF1B /* SOLocationManager.m in Sources */,
 				879637471AAB38B800DA4632 /* PedometerViewController.m in Sources */,
 				87D523451AAACFC100A7FA97 /* TabBarViewController.m in Sources */,
+				87BD32981AB6103B006D557A /* ReportsTableViewCell.m in Sources */,
 				87D5231A1AAAC86C00A7FA97 /* AppDelegate.m in Sources */,
+				87BD329D1AB616EE006D557A /* ReportDetailsViewController.m in Sources */,
+				87BD32951AB5ECB5006D557A /* CouponRedeemViewController.m in Sources */,
 				87B69E7E1AAC996F0005F4E3 /* CouponTableViewCell.m in Sources */,
 				87D5233D1AAACADE00A7FA97 /* MainMapController.m in Sources */,
 				87D523171AAAC86C00A7FA97 /* main.m in Sources */,
@@ -603,10 +639,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library,
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MIAWalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -621,10 +659,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library,
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MIAWalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";

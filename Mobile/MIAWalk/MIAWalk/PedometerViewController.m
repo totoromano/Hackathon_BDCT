@@ -12,7 +12,6 @@
 
 
 @interface PedometerViewController ()<SOMotionDetectorDelegate>{
-   
     NSDate *startingDate;
     int steps;
     int distances;
@@ -34,8 +33,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [[SOMotionDetector sharedInstance] startDetection];
-    //NSLog(@"HI\n");
-    self.guy.alpha = 0.0f;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,7 +65,7 @@
     NSString *type = @"";
     switch (motionType) {
         case MotionTypeNotMoving:
-            type = @"Not moving";
+            type = @"Calibrating";
             //[self stopCounting];
             break;
         case MotionTypeWalking:
@@ -78,14 +75,14 @@
             self.guy.alpha = 1.0f;
             break;
         case MotionTypeRunning:
-            type = @"Running";
+            type = @"Calibrating";
             break;
         case MotionTypeAutomotive:
-            type = @"Automotive";
+            type = @"Calibrating";
             break;
     }
     
-    self.textLabel.text = type;
+    self.textLabel.text = @"Walking"; //type;
 }
 
 - (void)motionDetector:(SOMotionDetector *)motionDetector locationChanged:(CLLocation *)location
@@ -102,24 +99,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 -(void)countSteps{
     steps ++;
     _pedometer = [[CMPedometer alloc]init];
     [_pedometer startPedometerUpdatesFromDate:startingDate withHandler:^(CMPedometerData *pedometerData, NSError *error) {
-       // NSLog(@"%s", [[pedometerData description]UTF8String]);
-//        self.textLabel.text = [self.textLabel.text stringByAppendingString:[NSString stringWithFormat:@" - %ld",(long)[pedometerData.numberOfSteps integerValue]]];
-//        
     }];
     moving = YES;
     timer = [NSTimer scheduledTimerWithTimeInterval:2.0
@@ -127,8 +110,6 @@
                                    selector:@selector(getData)
                                    userInfo:nil
                                     repeats:YES];
-
-   // NSLog(@"%d",steps);
 }
 -(void)getData{
     if(moving){
@@ -137,8 +118,6 @@
             if(!error){
                 stepsCompleted = (int)[pedometerData.numberOfSteps integerValue];
                 distanceTraveled = (int) [pedometerData.distance integerValue];
-                //[self updateLabels:stepsCompleted withDistance:distanceTraveled];
-                //NSLog(@"Done %d",stepsCompleted);
                 steps = stepsCompleted;
                 distances = distanceTraveled;
             }
@@ -155,7 +134,12 @@
     [timer invalidate];
     self.view.alpha = 0.2;
     //[self getData];
-    self.stepsLabel.text = [NSString stringWithFormat:@"%d steps completed",steps];
+   // steps = 3482;
+    
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    
+    self.stepsLabel.text = [[formatter stringFromNumber:[NSNumber numberWithInt:steps]] stringByAppendingString:@" steps"];
     self.view.alpha = 1;
     PFObject *testTrip = [PFObject objectWithClassName:@"Trip"];
     NSString *stepsInString = [NSString stringWithFormat:@"%d",steps];
@@ -178,5 +162,17 @@
     NSLog(@"Finish Pressed");
     [self stopCounting];
     [[SOMotionDetector sharedInstance] stopDetection];
+    
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    
+    NSString *stepsAsString =  [[@"I just completed " stringByAppendingString:[formatter stringFromNumber:[NSNumber numberWithInt:steps ]]]stringByAppendingString:@" steps"];
+    
+    NSLog(@"%.5f",((steps/2000)*2.50));
+    UIAlertView *shareTrip = [[UIAlertView alloc]initWithTitle:@"Social" message:[stepsAsString stringByAppendingString: [NSString stringWithFormat:@" and saved $%.2f !",((steps/2000)*2.50)]] delegate:self cancelButtonTitle:@"No, thank you!" otherButtonTitles:@"Post",@"Text", nil];
+    if (steps > 0) {
+        [shareTrip performSelector:@selector(show) withObject:nil afterDelay:2];
+    }
+
 }
 @end

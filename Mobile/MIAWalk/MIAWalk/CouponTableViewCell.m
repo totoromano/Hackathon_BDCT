@@ -11,6 +11,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *couponTitle;
 @property (weak, nonatomic) IBOutlet UILabel *couponEstablishment;
 @property (weak, nonatomic) IBOutlet UILabel *value;
+@property (weak, nonatomic) IBOutlet UILabel *milesAway;
 
 
 @end
@@ -20,10 +21,6 @@
 }
 
 - (void)awakeFromNib {
-    // Initialization code
-//    self.couponTitle.text = @"Coupon Title";
-//    self.couponEstablishment.text = @"Local Coffee Shop";
-//    self.value.text = @"10% Off Any Order";
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -32,9 +29,13 @@
     // Configure the view for the selected state
 }
 
--(void)setCouponUp:(NSString *)str withSubTitle:(NSString *)est withValue:(NSString *)value{
+-(void)setCouponUp:(NSString *)str withSubTitle:(NSString *)est withValue:(NSString *)value withIndex:(NSInteger *)index{
+    
+    NSLog(@"Tag of Cell: %d",(int)index);
     self.couponTitle.text = str;
     self.couponEstablishment.text = est;
     self.value.text = [value stringByAppendingString:@" pts."];
+    float miles = 0.2 * ((int)index+1);
+    self.milesAway.text =[ NSString stringWithFormat:@"%.1f mi.",miles];
 }
 @end
